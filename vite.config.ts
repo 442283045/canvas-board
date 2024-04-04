@@ -13,8 +13,8 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
-    },
+      '~/': `${path.resolve(__dirname, 'src')}/`
+    }
   },
   plugins: [
     VueMacros({
@@ -24,10 +24,10 @@ export default defineConfig({
         vue: Vue({
           script: {
             propsDestructure: true,
-            defineModel: true,
-          },
-        }),
-      },
+            defineModel: true
+          }
+        })
+      }
     }),
 
     // https://github.com/posva/unplugin-vue-router
@@ -41,28 +41,28 @@ export default defineConfig({
         VueRouterAutoImports,
         {
           // add any other imports you were relying on
-          'vue-router/auto': ['useLink'],
-        },
+          'vue-router/auto': ['useLink']
+        }
       ],
       dts: true,
       dirs: [
-        './src/composables',
+        './src/composables'
       ],
-      vueTemplate: true,
+      vueTemplate: true
     }),
 
     // https://github.com/antfu/vite-plugin-components
     Components({
-      dts: true,
+      dts: true
     }),
 
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
-    UnoCSS(),
+    UnoCSS()
   ],
 
   // https://github.com/vitest-dev/vitest
   test: {
-    environment: 'jsdom',
-  },
+    environment: 'jsdom'
+  }
 })
