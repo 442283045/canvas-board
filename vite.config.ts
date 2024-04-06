@@ -11,6 +11,9 @@ import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 
 export default defineConfig({
+  server: {
+    open: true
+  },
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`
